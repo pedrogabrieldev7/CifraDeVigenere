@@ -30,9 +30,10 @@ def cifrando(chave, texto, alfabeto):
     return texto_cifrado
 
 while True:
-    texto = input("Digite o texto: ").strip().upper()
-    chave = input("Digite uma chave: ").strip().upper()
+    texto = input("Digite o texto: ").replace(" ","").upper()
+    chave = input("Digite uma chave: ").replace(" ","").upper()
     if validacao(chave, texto):
+        print(chave, texto)
         chave = checando_tamanho(chave, texto)
         chave, texto = list(chave), list(texto)
         texto_cifrado = cifrando(chave, texto, alfabeto)
